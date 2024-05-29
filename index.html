@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>André Silva Gusmão</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            padding-top: 56px;
-        }
         .content-section {
             display: none;
             opacity: 0;
@@ -25,11 +23,115 @@
         .navbar-nav .nav-item {
             margin: 0 15px;
         }
+        body {
+            padding-top: 56px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 56px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card-header {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .card-body {
+            display: none;
+        }
+        .card-body.show {
+            display: block;
+        }
+        .link-container {
+            display: flex;
+            gap: 20px; 
+            justify-content: center; 
+        }
+        .link-container a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .link-container h2 {
+            margin: 0;
+            margin-right: 10px; 
+        }
+        .blog-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.blog-card .meta {
+    display: flex;
+}
+
+.blog-card .photo {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+}
+
+.blog-card .details {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.blog-card .tags ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog-card .author,
+.blog-card .date,
+.blog-card .tags li {
+    color: #666;
+}
+
+.blog-card .description {
+    padding: 20px;
+}
+
+.blog-card .description h1 {
+    color: #333;
+}
+
+.blog-card .description h2,
+.blog-card .description h3,
+.blog-card .description h4 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-card .description p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-card .description .read-more {
+    margin-top: 20px;
+}
+
+.blog-card .description .read-more a {
+    color: #007bff;
+    text-decoration: none;
+}
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">My Portfolio</a>
+        <a class="navbar-brand">André's Portfolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,6 +139,9 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-target="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="workexperience">Work Experience</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-target="projects">Projects</a>
@@ -50,25 +155,332 @@
 
     <div class="container">
         <div id="about" class="content-section active">
-            <h1>About Me</h1>
-            <p>Hello! I'm a web developer with a passion for creating dynamic and responsive web applications. I have experience in HTML, CSS, JavaScript, and various front-end frameworks.</p>
+            <div style="text-align: center;">
+                <div>
+                    <img src="assets/MyFaceTransparent.png">
+                </div>
+                <div>
+                    <h1>
+                        André Silva Gusmão
+                    </h1>
+                    <h2>
+                        Software engineer
+                    </h2>
+                    <div class="link-container">
+                        <a href="assets/files/AndreGusmao-CV.pdf" class="button">
+                          <div class="qube">
+                             <div style="color: rgb(33, 38, 43);"class="front"><div class="externallink fa fa-download fa-2"></div></div>
+                             <div class="back">Download my CV</div>
+                          </div>
+                       </a>
+                       <a href="https://www.linkedin.com/in/andre-silva-gusmao/" class="button">
+                        <div class="qube">
+                           <div style="color: rgb(33, 38, 43);" class="front "><div class="fas fa-external-link-alt"></div></div>
+                           <div class="back ">Visit my Linkedin </div>
+                        </div>
+                     </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header" id="headingIntroduction">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseIntroduction" aria-expanded="true" aria-controls="collapseIntroduction">
+                                Introduction (click me)
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseIntroduction" class="collapse show" aria-labelledby="headingIntroduction">
+                        <div class="card-body">
+                            <p>My name is André Silva Gusmão. I am a Brazilian software engineer with a Master's degree in Applied Computer Science from the Norwegian University of Science and Technology (NTNU). I have extensive experience in full-stack web development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSkills">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="true" aria-controls="collapseSkills">
+                                Technical Skills (click me)
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseSkills" class="collapse" aria-labelledby="headingSkills">
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Back-end:</strong> Primarily C#/ASP.NET/.NET, with some experience in Node.js.</li>
+                                <li><strong>Front-end:</strong> Vanilla JavaScript/TypeScript, Angular, Vue, and ASP.NET MVC.</li>
+                                <li><strong>Databases:</strong> Proficient in PostgreSQL, Microsoft SQL Server, MySQL, and MariaDB for SQL databases, as well as MongoDB for NoSQL databases.</li>
+                                <li><strong>ORM:</strong> Experienced with NHibernate and Entity Framework Core (EF Core).</li>
+                                <li><strong>Testing:</strong> Proficient in using XUnit for unit testing and experienced with Test Driven Development (TDD).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTools">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseTools" aria-expanded="true" aria-controls="collapseTools">
+                                Cloud and Tools (click me)
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTools" class="collapse" aria-labelledby="headingTools">
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>AWS:</strong> Experienced with IAM, Cognito, ECS, EventBridge, Lambda, S3, and other services.</li>
+                                <li><strong>Other Tools:</strong> ADFS (LDAP), Datadog, Docker, and JMeter.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a style="color: #00FF00;" href="https://capybasics.com/"><img src="assets/logobigtransparent.png"></a>
+                <h1 style="background-color: black; color: #00FF00;"><a style="color: #00FF00;" href="https://capybasics.com/">Check Capybasics Project Home Page as well.<div class="fas fa-external-link-alt"></div></a></h1>
+                <h3>Capybasics is a side project created by André Silva Gsumão to share software development knowledge as blog posts and/or youtube videos.</h3>
+            </div>
         </div>
+
+
+        <div id="workexperience" class="content-section">
+            <div style="margin-bottom: 3%;" class="main-content" id="aboutProfessional">
+                <h1>Professional Experience:</h1>
+                <link rel="stylesheet" href="styles.css">
+                <div class="blog-card alt">
+                    <div class="meta">
+                        <div class="photo" style="background-image: url(assets/base2_tecnologia_logo.jpg)"></div>
+                        <ul class="details">
+                            <li class="author"><b>Brazil - Minas Gerais</b></li>
+                            <li class="date"><b style="font-size: x-large;">December. 2022 - Present</b></li>
+                            <li class="tags">
+                                <ul>
+                                    <br>
+                                    <li><b>- C#</b></li>
+                                    <li><b>- ASP.NET</b></li>
+                                    <br>
+                                    <li><b>- AWS</b></li>
+                                    <li><b>- ADFS</b></li>
+                                    <li><b>- DOCKER</b></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <h1><u>Base 2 tecnologia</u></h1>
+                        <br>
+                        <h2><b>Full-time Back End Developer - Brazil</b></h2>
+                        <h3>About:</h3>
+                        <p>Currently, I am working at Base 2 tecnologia as C# Back-end developer. Base 2 is an IT consulting firm, specialized in QA, Development, and RPA. I am allocated at one of the biggest civil engineering companies in Brazil, <a href="https://www.direcional.com.br/" class="fa-external-link"><b>Direcional Engenharia</b></a>, one of Base 2 clients.</p>
+                        <h3>Technologies:</h3>
+                        <p>For back-end development, I have used ASP.NET Core with C# and mostly Microsoft SQL Server (MSSQL) as the database. Our systems integrate with AWS services such as IAM, Cognito, ECS, EventBridge, Lambda, S3, and others. The back-end structure is containerized with Docker and often integrates with ADFS via LDAP. We use JMeter for stress and performance testing and Datadog for application monitoring. Despite being hired as a back-end developer, I eventually got involved in some front-end development using .NET MVC and Vue.js.</p>
+                        <p class="read-more"><a href="https://www.linkedin.com/company/base2-tecnologia">Base 2 Linkedin</a></p>
+                    </div>
+                </div>
+                
+                  <div class="blog-card alt">
+                    <div class="meta">
+                      <div class="photo" style="background-image: url(assets/bosch.webp)"></div>
+                      <ul class="details">
+                        <li class="author"><b>Germany - Baden-Württemberg</b></li>
+                        <li class="date"><b style="font-size: x-large;">May 2021 - Nov 2021</b></li>
+                        <li class="tags">
+                          <ul>
+                            <br>
+                            <li><b>Web Ontology Language</b></li>
+                            <li><b>Angular</b></li>
+                            <br>
+                            <li><b>TypeScript</b></li>
+                            <li><b>PostgreSQL</b></li>
+                            <li><b>C#</b></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="description">
+                      <h1><u>Bosch</u></h1>
+                      <br>
+                      <h2><b>Full-time Intern at Bosch Center of Artificial Intelligence - Germany</b></h2>
+                      <h3>About:</h3>
+                      <p>After my fruitful partnership with Bosch as a research assistant at NTNU, Bosch Center for Artificail Inteligence (BCAI) appreciated working with me and did ofer a full-time work contract.
+                        I had to move to Baden-Württemberg, Germany and give continuation to our work at the development of a condition monitoring system for industrial machinery
+                        processes using machine learning and semantic technologies.<br>
+                        I have received 2 proposals after my contract with Bosch was finished. One to renew the contract for another semester but I decided not to take it in order to focus one semester in writing my Master's thesis. I did receive an initial proposal to continue the project as a researcher but this would involve me starting a PhD, which I am not interested in.
+                      </p>
+                      <h3>Technologies:</h3>
+                      <p>
+                        The main part of the development involved the continuation of the user GUI with front-end development using <b>Angular</b> framework with <b>javascript/typescript</b>. I did start the back-end development but due to the lack of time we could not go in depth with it. The back-end development as made with with <b>ASP.NET Core</b> using .NET core with <b>C#</b>. We did use <b>PostgreSQL</b> as secondary databse for our system.
+                      </p>
+    
+                      <p class="read-more">
+                        <a href="https://www.linkedin.com/company/bosch">Bosch Linkedin</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="blog-card alt">
+                    <div class="meta">
+                      <div class="photo" style="background-image: url(assets/a-ntnu_logo.png)"></div>
+                      <ul class="details">
+                        <li class="author"><b>Norway - INNLANDET</b></a></li>
+                        <li class="date"><b style="font-size: x-large;">Nov 2020 - Feb 2021</b></li>
+                        <li class="tags">
+                          <ul>
+                            <br>
+                            <li><b>Web Ontology Language (OWL)</b></li>
+                            <li><b>Angular</b></li>
+                            <br>
+                            <li><b>TypeScript</b></li>
+                            <li><b>Javascript</b></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="description">
+                      <h1><u>Norwegian University of Science and Technology (NTNU)</u></h1>
+                      <br>
+                      <h2><b>Part-time Research Assistant - Norway</b></h2>
+                      <h3>About:</h3>
+                      <p>I got an oportunity at NTNU to work as a research assistant for a project in partnership with Bosch. I worked in the research and development of a  condition monitoring system for industrial machinery
+                        processes using machine learning and semantic technologies. Regarding development in this initial part of the development I did focus on the front-end development and prototyping of the system. 
+                        We did produce the paper <a href="https://www.sciencedirect.com/science/article/pii/S1570826821000391?via%3Dihub">SemML: Facilitating development of ML models for condition monitoring with semantics</a>
+                        and we had a partnership with SiriusLabs in the project <a href="https://sirius-labs.no/sindais4-scaling-industrial-ai-with-semantics/">Connecting humans, data, methods and applications in AI solutions</a> in which I could contribute in the front-end development, prototyping and writing. 
+                      </p>
+                      <h3>Technologies:</h3>
+                      <p>The project involved a lot of scientific research and study on ontology, industrial welding, artificial inteligence and User Experience.
+                         For the front-end development The framework <b>Angular</b> was used with <b>typescript/javascript</b>.
+                      </p>
+    
+                      <p class="read-more">
+                        <a href="https://www.linkedin.com/school/ntnu">NTNU Linkedin</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="blog-card alt">
+                    <div class="meta">
+                      <div class="photo" style="background-image: url(assets/a-sintef.jpg)"></div>
+                      <ul class="details">
+                        <li class="author"><b>Norway - ØSTLANDET</b></li>
+                        <li class="date"><b style="font-size: x-large;">Mar 2020 - Jun 2020 & <br> Sep 2020 - Nov 2020</b></li>
+                        <li class="tags">
+                          <ul>
+                            <br>
+                            <li><b>Angular</b></li>
+                            <li><b>TypeScript</b></li>
+                            <br>
+                            <li><b>NodeJs</b></li>
+                            <li><b>MongoDb</b></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="description">
+                      <h1><u>SINTEF</u></h1>
+                      <br>
+                      <h2><b>Part-time full-stack software engineer</b></h2>
+                      <h3>About:</h3>
+                      <p>Sintef is an independent applied research organization founded in 1950 in Norway with vast expertise in in technology, medicine and the social sciences. 
+                        I was hired by Sintef as Part-time full-stack software engineer for a short project that aimed to study the requirements and build a prototype for a general-purpose assembly line monitoring system using Angular.   
+                        After the prototype was finished in June of 2020 the contract came to an end.
+                        In September 2020 a new contract proposal was made since Sintef was satisfied with the results I have presented in the previous contract. 
+                        Sadly, due to a cut of founds during covid and the client which the system was being built for cancel the project the contract was also terminated. 
+                      </p>
+                      
+                        <h3>Technologies:</h3>
+                      <p>
+                        Most of the work involved requirements research and front-end development. The prototype was pretty much a finished product of the web aplication fron-end built with <b>Angular</b> framework with <b>javascript/typescript</b>. Only the initial part of the back-end development could be done, it was being made with <b>NodeJs</b> and <b>MongoDb (NoSql)</b>.
+                      </p>
+    
+                      <p class="read-more">
+                        <a href="https://www.linkedin.com/company/sintef">Sintef Linkedin</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="blog-card alt">
+                    <div class="meta">
+                      <div class="photo" style="background-image: url(assets/a-ref.jpg)"></div>
+                      <ul class="details">
+                        <li class="author"><b>Brazil - Minas Gerais</b></a></li>
+                        <li class="date"><b style="font-size: x-large;">Mar 2019 - Jul 2019</b> </li>
+                        <li class="tags">
+                          <ul>
+                            <br>
+                            <li><b>Angular</b></li>
+                            <li><b>TypeScript</b></li>
+                            <li><b>Asp.net</b></li>
+                            <br>
+                            <li><b>C#</b></li>
+                            <li><b>MariaDb</b></li>
+                            <li><b>XUnit</b></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="description">
+                      <h1><u>Ref Spatial</u></h1>
+                      <br>
+                      <h2><b></b>Full-time full-stack software developer</h2>
+                      <h3>About:</h3>
+                      <p>Ref Spatial was a startup which CTO was <a href="https://www.linkedin.com/in/edney-oliveira-b4255611/" class="fa-external-link">Edney Oliveira</a> in Minas Gerais, Brazil. The company was an IT consulting firm that had clients from different states.<br> I was allocated in a car insurance client which development consisted in full-stack development of an app to manage over 2000 insurence plans and a system that managed the communication between secretaries and tow companies in the area. I was the solo developer for this projet.</p>
+                      <h3>Technologies used:</h3>
+                      <p><b>Angular</b> as front-end framework with <b>typescript/javascript</b>. <b>Asp.net core</b> from .Net Core with <b>C#</b> for the back-end development. <b>MariaDb</b> was used as the database for the project. <b>NHibernate</b> was the ORM of coice. <b>Test Driven Development (TDD)</b> development methodology was applied with <b>XUnit</b>. </p>
+    
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+
         <div id="projects" class="content-section">
             <h1>Projects</h1>
-            <p>Here are some of my projects:</p>
-            <ul>
-                <li>Project 1: A web-based to-do list application.</li>
-                <li>Project 2: A responsive portfolio website.</li>
-                <li>Project 3: A JavaScript game.</li>
-            </ul>
+            <div id="main-projects">
+                <div class="project-divider" style="margin-top: 20px; border-top: 1px solid #dee2e6;"></div>
+                <section class="project-section" style="margin-bottom: 40px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease;">
+                    <h2 style="margin-bottom: 10px; color: #343a40;">PUBLICATION - SemML: Facilitating development of ML models for condition monitoring with semantics <a href="https://www.sciencedirect.com/science/article/pii/S1570826821000391?via%3Dihub" style="margin-left: 5px; color: #007bff; text-decoration: none;" target="_blank" class="externallink"><i class="fas fa-external-link-alt"></i></a></h2>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1570826821000391?via%3Dihub"><img src="assets/projects/SemMLSmall.png" alt="SemMLImage" style="max-width: 100%; border-radius: 5px;"></a>
+                    <p style="color: #6c757d;">I am co-author of the article SemML: Facilitating development of ML models for condition monitoring with semantics published in the Volume 71 of the Journal of Web Semantics. 
+                        <br> The project consists in the research and development of a predictive condition monitoring system for industrial processes using Semantics and Machine Learning.
+                        <br> My contribution consisted mainly, but not limited, to the scientific research and the development of the GUI for the system.
+                    </p>
+                </section>
+                <div class="project-divider" style="margin-top: 20px; border-top: 1px solid #dee2e6;"></div>
+
+
+                <section class="project-section" style="margin-bottom: 40px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease;">
+                    <h2 style="margin-bottom: 10px; color: #343a40;">CONTRIBUTOR - SIndAIS4: Scaling Industrial AI with Semantics <a href="https://sirius-labs.no/sindais4-scaling-industrial-ai-with-semantics/" style="margin-left: 5px; color: #007bff; text-decoration: none;" target="_blank" class="externallink"><i class="fas fa-external-link-alt"></i></a></h2>
+                    <a href="https://sirius-labs.no/sindais4-scaling-industrial-ai-with-semantics/"><img src="assets/projects/Sirius1.png" alt="Project 2 Image" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;"></a>
+                    <a href="https://sirius-labs.no/sindais4-scaling-industrial-ai-with-semantics/"><img src="assets/projects/Sirius2.png" alt="Project 2 Image" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;"></a>
+                    <p style="color: #6c757d;">Sirius labs SIRIUS is a Norwegian Centre for Research-driven Innovation that addresses the problems of scalable data access in and beyond the oil & gas industry. <br>
+                        I did contribute at the project SIndAIS4 from sirius-labs in which I mainly helped documenting and developing the User Interface for a Quality Monitoring of Automated Welding system at Bosch from project SemML.
+                    </p>
+                </section>
+                <div class="project-divider" style="margin-top: 20px; border-top: 1px solid #dee2e6;"></div>
+        
+                <section class="project-section" style="margin-bottom: 40px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease;">
+                    <h2 style="margin-bottom: 10px; color: #343a40;">PROJECT - Capybasics <a href="https://www.youtube.com/channel/UCxOmK87otDpPNxKvxGK_USA" style="margin-left: 5px; color: #007bff; text-decoration: none;" target="_blank" class="externallink"><i class="fas fa-external-link-alt"></i></a></h2>
+                    <a href="https://www.youtube.com/channel/UCxOmK87otDpPNxKvxGK_USA"><img src="assets/projects/Capybasics.png" alt="Capybasics Image" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;"></a>
+                    <p style="color: #6c757d;">Creator of Project Capybasics. Read more at <a href="https://capybasics.com/">Capybasic's Home page.</a></p>
+                </section>
+                <div class="project-divider" style="margin-top: 20px; border-top: 1px solid #dee2e6;"></div>
+        
+                <section class="project-section" style="margin-bottom: 40px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease;">
+                    <h2 style="margin-bottom: 10px; color: #343a40;">PROJECT - Others </h2>
+                    <p style="color: #6c757d;">I got involved in some projects that are either private, discontinued, prototypes, or publicly available. <br>
+                        I do not want to highlight any of those projects in specific since they were produced during my work time and I do not want any legal problem that I could get from a contract clause (even though I think there would be no problem I think it is better to be safe). <br>
+                        These projects are web applications in which I worked either as a back-end developer, front-end developer, or full-stack developer. You can get a general idea about them in the About Me page.
+                    </p>
+                </section>
+                <div class="project-divider" style="margin-top: 20px; border-top: 1px solid #dee2e6;"></div>
+          
+          
+        </div>
         </div>
         <div id="contact" class="content-section">
-            <h1>Contact</h1>
+            <h1>Contact me</h1>
             <p>You can reach me at:</p>
             <ul>
-                <li>Email: myemail@example.com</li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/myprofile">linkedin.com/in/myprofile</a></li>
-                <li>GitHub: <a href="https://github.com/myusername">github.com/myusername</a></li>
+                <li>LinkedIn (PREFERABLE): <a href="https://www.linkedin.com/in/andre-silva-gusmao/"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/andre-silva-gusmao/</a></li>
+                <li>Email: andresg1952@hotmail.com</li>
+                <li>GitHub: <a href="https://github.com/andresilvagusmao"><i class="fab fa-github"></i> https://github.com/andresilvagusmao</a></li>
             </ul>
         </div>
     </div>
@@ -84,6 +496,19 @@
                 $('#' + target).addClass('active').css('opacity', 1);
             });
         });
+        $(document).ready(function() {
+        $('.card-header').click(function() {
+            $(this).next('.collapse').collapse('toggle');
+        });
+
+        $('.collapse').on('shown.bs.collapse', function() {
+            $(this).find('.card-body').addClass('show');
+        });
+
+        $('.collapse').on('hidden.bs.collapse', function() {
+            $(this).find('.card-body').removeClass('show');
+        });
+    });
     </script>
 </body>
 </html>
